@@ -82,6 +82,11 @@ form {
     text-align: left;
 }
 
+#inputName, #inputEmail, #inputSubject, #submitButton {
+    border-radius: 1px;
+    height: 40px;
+}
+
 
 
 
