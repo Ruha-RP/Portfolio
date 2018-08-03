@@ -69,6 +69,22 @@ hr {
 	opacity: 0.5;
 }
 
+#message-box {
+    text-align: left;
+}
+
+
+form {
+    margin-top: 32px;
+}
+
+#nameLabel, #emailLabel, #subjectLabel {
+    text-align: left;
+}
+
+
+
+
 
 
 
