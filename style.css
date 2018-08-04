@@ -91,6 +91,23 @@ form {
     display: flex;
 }
 
+#submitButton {
+    color: white;
+    text-align: center;
+}
+
+#submitSection {
+    text-align: center;
+}
+
+#submitSection:hover {
+    transform: scale(1.5);
+}
+
+
+
+
+
 
 
 
