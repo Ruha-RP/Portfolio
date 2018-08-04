@@ -78,7 +78,7 @@ form {
     margin-top: 32px;
 }
 
-#nameLabel, #emailLabel, #subjectLabel {
+#nameLabel, #emailLabel, #subjectLabel, #messageLabel {
     text-align: left;
 }
 
@@ -87,6 +87,9 @@ form {
     height: 40px;
 }
 
+#messageLabel {
+    display: flex;
+}
 
 
 
