@@ -104,10 +104,16 @@ form {
     transform: scale(1.5);
 }
 
+img {
+    width: 375px;
+    height: 350px;
+    filter: grayscale(100%);
+}
 
+img:hover {
+    filter: none;
 
-
-
+}
 
 
 
