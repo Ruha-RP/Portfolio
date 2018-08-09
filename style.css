@@ -69,7 +69,15 @@ hr {
 	opacity: 0.5;
 }
 
+#long {
+    width: 270px;
+}
+
 #message-box {
+    text-align: left;
+}
+
+#contact {
     text-align: left;
 }
 
@@ -110,14 +118,11 @@ img {
     filter: grayscale(100%);
 }
 
-img:hover {
-    filter: none;
+.project:hover img {
     transform: scale(1.2);
     position: relative;
     z-index: 100;
-}
-
-.project:hover {
+    filter: none;
     
 }
 
@@ -132,12 +137,40 @@ img:hover {
     border-radius: 3px;
     padding: 3px;
     display: none;
-    font-size: 20px;
+    font-size: 30px;
+    font-style: bold;
+}
+
+.projectDesc {
+    position: absolute;
+    z-index: 200;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    background-color: white;
+    border-radius: 3px;
+    padding: 3px;
+    display: none;
+    font-size: 10px;
 }
 
 .project:hover .projectName {
     display: block;
-}   
+}
+
+.project:hover .projectDesc {
+    display: block;
+}    
+
+#github, #linkedin {
+    color: white;
+    padding: 10px;
+}
+
+
+
+
 
 
 
