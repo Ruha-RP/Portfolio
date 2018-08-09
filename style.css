@@ -104,6 +104,11 @@ form {
     text-align: center;
 }
 
+#secondSubmit {
+    text-align: right;
+}
+
+
 #submitSection {
     text-align: center;
 }

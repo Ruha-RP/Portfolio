@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -116,34 +117,36 @@
 
       <div id="message-box">Send me a message: 
 
-        <form class="form-horizontal">
+        <form class="form-horizontal" id="contact-form">
+          <input type="hidden" name="contact_number">
           <div class="form-group">
             <label for="inputName" class="col-sm-1 control-label" id="nameLabel">Name</label>
             <div class="col-sm-11">
-              <input type="text" class="form-control" id="inputName">
+              <input type="text" class="form-control" id="inputName" name="user_name">
             </div>
           </div>
           <div class="form-group">
             <label for="inputEmail" class="col-sm-1 control-label" id="emailLabel">Email</label>
             <div class="col-sm-11">
-              <input type="email" class="form-control" id="inputEmail">
+              <input type="email" class="form-control" id="inputEmail" name="user_email">
             </div>
           </div>
           <div class="form-group">
             <label for="inputSubject" class="col-sm-1 control-label" id="subjectLabel">Subject</label>
             <div class="col-sm-11">
-              <input type="text" class="form-control" id="inputSubject">
+              <input type="text" class="form-control" id="inputSubject" name="user_subject">
             </div>
           </div>
           <div class="form-group">
             <label for="inputMessage" class="col-sm-1 control-label" id="messageLabel">Message</label>
             <div class="col-sm-11">
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" rows="3" name="user_message"></textarea>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-10 col-sm-2" id="submitSection">
-              <a type="submit" id="submitButton"><i class="fas fa-paper-plane fa-2x"></i></a> Submit
+              <!-- <a type="submit" id="submitButton"><i class="fas fa-paper-plane fa-2x"></i></a> Submit -->
+              <input type="submit" value="Submit" id="secondSubmit" class="btn btn-light">
             </div>
           </div>
         </form>
@@ -157,5 +160,43 @@
     </div><!-- Closes contact container -->
 
   </div><!-- Closes Main Content container -->
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Email JS SDK -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- Initializing SDK -->
+  <script type="text/javascript">
+        (function(){
+           emailjs.init("user_yLfV6otgYTkohSwrafxHQ");
+        })();
+  </script>
+
+  <!-- Submitting contact form -->
+  <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm("contact_service","contact_form",this)
+                .then(function(response) {
+                   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+                   swal("Thank you for your message. I will aim to get in touch with you as soon as possible!")
+                }, function(err) {
+                   console.log("FAILED. error=", err);
+                });
+
+            });
+        }
+    </script>
 </body>
+
+  
+
 </html>
+
