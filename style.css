@@ -184,6 +184,10 @@ img {
         margin-left: 160px;
     }
 
+    .sidenav {
+        display: none;
+    }
+
 }
 
 
