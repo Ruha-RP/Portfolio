@@ -174,7 +174,17 @@ img {
 }
 
 
+@media only screen and (max-width: 1024px) {
+    body {
+        background-color: lightblue;
+        text-align: left;
+    }
 
+    #main {
+        margin-left: 160px;
+    }
+
+}
 
 
 
