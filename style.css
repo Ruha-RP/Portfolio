@@ -176,12 +176,12 @@ img {
 
 @media only screen and (max-width: 1024px) {
     body {
-        background-color: yellow;
+        background-color: lightblue;
         text-align: left;
     }
 
     #main {
-        margin-left: 160px;
+        margin-left: 0px;
     }
 
     .sidenav {
